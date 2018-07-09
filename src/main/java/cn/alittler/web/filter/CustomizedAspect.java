@@ -23,7 +23,7 @@ public class CustomizedAspect {
 	 */
 	@Around("execution(public * cn.alittler.web.rest.*.*(..))")
 	public Object handlerControllerMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-		log.info("自定义过滤器开始");
+		log.info("自定义切面开始");
 		long startTime = new Date().getTime();
 		Object object = proceedingJoinPoint.proceed();
 		Object[] args = proceedingJoinPoint.getArgs();
@@ -32,7 +32,7 @@ public class CustomizedAspect {
 			log.info("参数：{}", arg);
 		}
 		log.info("过滤器耗时：{} ms", new Date().getTime() - startTime);
-		log.info("自定义过滤器结束");
+		log.info("自定义切面结束");
 		return object;
 	}
 
