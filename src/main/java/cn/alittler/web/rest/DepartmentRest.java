@@ -25,8 +25,12 @@ import cn.alittler.service.DepartmentService;
 @RequestMapping("/deps")
 public class DepartmentRest {
 
-	@Autowired
 	private DepartmentService departmentService;
+
+	@Autowired
+	public DepartmentRest(DepartmentService departmentService) {
+		this.departmentService = departmentService;
+	}
 
 	@PostMapping
 	public Department create(@RequestParam String name) {

@@ -20,8 +20,12 @@ import cn.alittler.service.RoleService;
 @Transactional(rollbackFor = Exception.class)
 public class RoleServiceImpl implements RoleService {
 
-	@Autowired
 	private RoleRepository roleRepository;
+
+	@Autowired
+	public RoleServiceImpl(RoleRepository roleRepository) {
+		this.roleRepository = roleRepository;
+	}
 
 	@Override
 	public Role save(String name) {

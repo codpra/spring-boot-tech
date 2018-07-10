@@ -25,8 +25,12 @@ import cn.alittler.service.RoleService;
 @RequestMapping("/role")
 public class RoleRest {
 
-	@Autowired
 	private RoleService roleService;
+
+	@Autowired
+	public RoleRest(RoleService roleService) {
+		this.roleService = roleService;
+	}
 
 	@PostMapping
 	public Role create(@RequestParam String name) {

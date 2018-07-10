@@ -21,8 +21,12 @@ import cn.alittler.utils.DateUtils;
 @Transactional(rollbackFor = Exception.class)
 public class EmployeeServiceImpl implements EmployeeService {
 
-	@Autowired
 	private EmployeeRepository employeeRepository;
+
+	@Autowired
+	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
 
 	@Override
 	public Employee save(String name, String birthday) {

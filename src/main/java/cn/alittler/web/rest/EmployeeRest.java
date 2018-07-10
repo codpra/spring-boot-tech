@@ -25,8 +25,12 @@ import cn.alittler.service.EmployeeService;
 @RequestMapping("/emps")
 public class EmployeeRest {
 
-	@Autowired
 	private EmployeeService employeeService;
+
+	@Autowired
+	public EmployeeRest(EmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
 
 	@PostMapping
 	public Employee create(@RequestParam String name, @RequestParam String birthday) {

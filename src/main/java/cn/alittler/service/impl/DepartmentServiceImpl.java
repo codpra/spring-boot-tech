@@ -20,8 +20,12 @@ import cn.alittler.service.DepartmentService;
 @Transactional(rollbackFor = Exception.class)
 public class DepartmentServiceImpl implements DepartmentService {
 
-	@Autowired
 	private DepartmentRepository departmentRepository;
+
+	@Autowired
+	public DepartmentServiceImpl(DepartmentRepository departmentRepository) {
+		this.departmentRepository = departmentRepository;
+	}
 
 	@Override
 	public Department save(String name) {
