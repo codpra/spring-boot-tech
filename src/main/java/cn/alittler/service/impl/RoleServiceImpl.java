@@ -1,5 +1,6 @@
 package cn.alittler.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class RoleServiceImpl implements RoleService {
 	public Role save(String name) {
 		Role role = new Role();
 		role.setName(name);
+		role.setCreateTime(new Date());
 		return roleRepository.save(role);
 	}
 

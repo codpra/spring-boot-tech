@@ -1,5 +1,6 @@
 package cn.alittler.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 	public Department save(String name) {
 		Department department = new Department();
 		department.setName(name);
+		department.setCreateTime(new Date());
 		return departmentRepository.save(department);
 	}
 

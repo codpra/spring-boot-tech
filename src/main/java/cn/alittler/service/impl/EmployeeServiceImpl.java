@@ -1,5 +1,6 @@
 package cn.alittler.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Employee employee = new Employee();
 		employee.setName(name);
 		employee.setBirthday(DateUtils.parseDateStr(birthday, "yyyy-MM-dd"));
+		employee.setCreateTime(new Date());
 		return employeeRepository.save(employee);
 	}
 
