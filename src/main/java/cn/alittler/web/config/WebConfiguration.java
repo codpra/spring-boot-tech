@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Configuration;
 
 import cn.alittler.web.filter.CustomizedFilter;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Configuration
 public class WebConfiguration {
 

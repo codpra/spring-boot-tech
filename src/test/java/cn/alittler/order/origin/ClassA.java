@@ -4,6 +4,10 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 public class ClassA extends TestCase {
 
 	public static Test suite() {

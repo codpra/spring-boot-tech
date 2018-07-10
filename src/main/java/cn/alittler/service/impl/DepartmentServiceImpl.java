@@ -12,8 +12,12 @@ import cn.alittler.entity.Department;
 import cn.alittler.repository.DepartmentRepository;
 import cn.alittler.service.DepartmentService;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class DepartmentServiceImpl implements DepartmentService {
 
 	@Autowired

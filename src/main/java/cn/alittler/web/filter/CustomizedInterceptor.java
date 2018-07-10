@@ -1,7 +1,5 @@
 package cn.alittler.web.filter;
 
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -28,7 +26,7 @@ public class CustomizedInterceptor implements HandlerInterceptor {
 		log.info("preHandle");
 		log.info("拦截器类名：{}", ((HandlerMethod) handler).getBean().getClass().getName());
 		log.info("拦截器方法名：{}", ((HandlerMethod) handler).getMethod().getName());
-		request.setAttribute("startTime", new Date().getTime());
+		request.setAttribute("startTime", System.currentTimeMillis());
 		return true;
 	}
 
@@ -37,7 +35,7 @@ public class CustomizedInterceptor implements HandlerInterceptor {
 			ModelAndView modelAndView) throws Exception {
 		log.info("postHandle");
 		Long startTime = (Long) request.getAttribute("startTime");
-		log.info("拦截器耗时：{} ms", new Date().getTime() - startTime);
+		log.info("拦截器耗时：{} ms", System.currentTimeMillis() - startTime);
 
 	}
 
@@ -46,7 +44,7 @@ public class CustomizedInterceptor implements HandlerInterceptor {
 			throws Exception {
 		log.info("afterCompletion");
 		Long startTime = (Long) request.getAttribute("startTime");
-		log.info("拦截器耗时：{} ms", new Date().getTime() - startTime);
+		log.info("拦截器耗时：{} ms", System.currentTimeMillis() - startTime);
 		log.info("异常信息：{}", ex);
 	}
 

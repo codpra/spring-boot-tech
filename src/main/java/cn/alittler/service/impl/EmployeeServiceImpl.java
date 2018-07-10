@@ -13,8 +13,12 @@ import cn.alittler.repository.EmployeeRepository;
 import cn.alittler.service.EmployeeService;
 import cn.alittler.utils.DateUtils;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired

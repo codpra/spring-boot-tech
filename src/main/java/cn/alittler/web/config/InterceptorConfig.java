@@ -7,12 +7,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import cn.alittler.web.filter.CustomizedInterceptor;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Configuration
 public class InterceptorConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired
 	private CustomizedInterceptor customizedInterceptor;
 
+	@Override
 	public void addInterceptors(InterceptorRegistry interceptorRegistry) {
 		interceptorRegistry.addInterceptor(customizedInterceptor);
 	}

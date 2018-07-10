@@ -12,8 +12,12 @@ import cn.alittler.entity.Role;
 import cn.alittler.repository.RoleRepository;
 import cn.alittler.service.RoleService;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class RoleServiceImpl implements RoleService {
 
 	@Autowired

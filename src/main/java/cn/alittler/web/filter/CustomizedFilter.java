@@ -1,7 +1,6 @@
 package cn.alittler.web.filter;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -32,9 +31,9 @@ public class CustomizedFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		log.info("自定义过滤器开始");
-		long startTime = new Date().getTime();
+		long startTime = System.currentTimeMillis();
 		chain.doFilter(request, response);
-		log.info("过滤器耗时：{} ms", new Date().getTime() - startTime);
+		log.info("过滤器耗时：{} ms", System.currentTimeMillis() - startTime);
 		log.info("自定义过滤器结束");
 	}
 

@@ -6,6 +6,10 @@ import java.util.Date;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author LiuDeCai
+ *
+ */
 @Slf4j
 public class DateUtils {
 	public static Date parseDateStr(String dateStr, String pattern) {
