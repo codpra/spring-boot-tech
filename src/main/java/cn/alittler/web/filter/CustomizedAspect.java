@@ -51,13 +51,15 @@ public class CustomizedAspect {
 		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 		HttpServletRequest request = attributes.getRequest();
 		HttpServletResponse response = attributes.getResponse();
-
+		log.info("request: {}", request);
+		log.info("request: {}", response);
 		String classType = proceedingJoinPoint.getTarget().getClass().getName();
 		Class<?> clazz = Class.forName(classType);
 		String clazzName = clazz.getName();
 		String methodName = proceedingJoinPoint.getSignature().getName(); // 获取方法名称
 		Object[] argsValues = proceedingJoinPoint.getArgs();// 参数
 		Map<String, Object> nameAndArgs = getFieldsName(this.getClass(), clazzName, methodName, argsValues);// 获取被切参数名称及参数值
+		log.info("nameAndArgs: {}", nameAndArgs);
 
 		Object[] args = proceedingJoinPoint.getArgs();
 		// TODO 如何获取参数名
